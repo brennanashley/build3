@@ -1,4 +1,5 @@
 """Data visualization functions"""
+"""I don't know if we'll have to do these. Here was an example"""
 
 from fastapi import APIRouter, HTTPException
 import pandas as pd

@@ -11,9 +11,11 @@ log = logging.getLogger(__name__)
 router = APIRouter()
 
 
-class Item(BaseModel):
+class Song(BaseModel):
     """Use this data model to parse the request body JSON."""
-
+    """We'll need to edit with our column names from dataframe, examples below"""
+#    id: int
+#    popularity: int
     x1: float = Field(..., example=3.14)
     x2: int = Field(..., example=-42)
     x3: str = Field(..., example='banjo')
@@ -30,23 +32,12 @@ class Item(BaseModel):
 
 
 @router.post('/predict')
-async def predict(item: Item):
+async def predict(song: Song):
     """
-    Make random baseline predictions for classification problem 🔮
-
-    ### Request Body
-    - `x1`: positive float
-    - `x2`: integer
-    - `x3`: string
-
-    ### Response
-    - `prediction`: boolean, at random
-    - `predict_proba`: float between 0.5 and 1.0, 
-    representing the predicted class's probability
-
-    Replace the placeholder docstring and fake predictions with your own model.
+    Let us help you find new songs using our random forest model!
+    (Replace the below code with our model).
     """
-    X_new = item.to_df()
+    X_new = song.to_df()
     log.info(X_new)
     y_pred = random.choice([True, False])
     y_pred_proba = random.random() / 2 + 0.5

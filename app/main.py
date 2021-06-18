@@ -5,18 +5,18 @@ import uvicorn
 from app import db, ml, viz
 
 description = """
-Edit your app's title and description. See [https://fastapi.tiangolo.com/tutorial/metadata/](https://fastapi.tiangolo.com/tutorial/metadata/)
+Deploys a random forest model fit on the [Spotify](https://www.kaggle.com/yamaerenay/spotify-dataset-19212020-160k-tracks?select=tracks.csv) dataset.
 
 To use these interactive docs:
 - Click on an endpoint below
 - Click the **Try it out** button
-- Edit the Request body or any parameters
+- Edit the Request body with your song choice
 - Click the **Execute** button
-- Scroll down to see the Server response Code & Details
+- Scroll down to see the server response code & details
 """
 
 app = FastAPI(
-    title='DS API',
+    title='🎵Spotify Sleuths🎵',
     description=description,
     docs_url='/',
 )
